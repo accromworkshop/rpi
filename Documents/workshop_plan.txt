@@ -1,0 +1,58 @@
+Prerequisites:
+Caglar - Wifi router
+Caglar - internet connection from router
+Seyed - x times Raspis (power adapter + SD cards + wifi enablement)
+Caglar - Preconfigure Raspis for static IP
+RO - for Windows: Install Python 2.7 IDE and Notepad++ with the plugin NppFTP
+==================================
+Workshop agenda:
+- Introduction to Python programming (all hands get dirty) ---> What exactly???
+	- (Pycharm, Pyscripter, Pyzo)
+===Sinan prepares the slides===
+	05 - Why Python? 
+	05 - Python syntax
+	10 - Primitive variable types
+	05 - Conditions & Loops
+	10 - How to create a function?
+40-45. min.	
+
+----Mehmet Top is the narrator---
+- Implementing a webserver in PC env.
+	05 - Python Packaging System (Pip)
+	10 - "Flask" module defintion/description
+		- How to use?
+	05 - How start a webserver with a predefined HTML page?
+30. min 
+(75. min so far, probably catch a breath for 15 min.)
+90 min. so far.
+(EN KOTU BURDA INTERNET GIDECEK)	
+- Deploy the webserver to Raspi, see it is platform independent 
+	- (Notepad++)SSH into Raspi
+	- Copy webserver content into a file
+	- Run the webserver on Raspi 
+15. min
+(105 min so far)	
+05 - A short introduction to Raspi pinout
+
+- Implement GPIO connection with webserver in Raspi
+	- Web request handling for Temp/Hum. sensor and Button
+		30 - HW connections (fritzing) up and running
+			10 - HW connection
+			20 - Write a small module for sensor reading + LED output
+		10 - Refresh Temp sensor value (reuse small module from previous step)
+		10 - Update LED status from web request (reuse small module from previous step)
+50/160	
+- See all works! :)
+
+
+====== 
+Deadlines:
+- Sinan - slides ==> 17.05.2017
+- Caglar - wifi router setup ==> 26.05.2017
+- Seyed - buying Raspis & sensors (DHT sensor+LEDs) ==> 23.05.2017
+- Caglar - Raspi setups (static IP etc.) ready ==> 30.05.2017
+- Bekir - his slides for general status overview ==> 26.05.2017
+- Mehmet Top - prepare slides for following up the hands-on part ==> 17.05.2017
+- 
+- Ultimate deadline for a dry-run demo ==> 26.05.2017
+- There should be nothing more to do after 02.06.2017
