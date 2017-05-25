@@ -4,7 +4,12 @@
         <div>Dashboard Page</div>
         <hr>
         <div> Temperature Value : {{temperature}}</div>
-        <div> Humidity Value : {{humidity}}</div> 
+        <div> Humidity Value : {{humidity}}</div>
+	{% if ledStatus|string() == "on" %}
+		<a href="http://localhost:5000/dashboard?led=off">Turn off LED</a>
+	{% else %}
+		<a href="http://localhost:5000/dashboard?led=on">Turn on LED</a>
+	{% endif %}
     </body>
 </html>
 

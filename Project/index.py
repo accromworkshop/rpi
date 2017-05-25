@@ -9,6 +9,7 @@
 # Licence:     The Beer Licence
 #-------------------------------------------------------------------------------
 from flask import Flask
+from flask import request
 from flask import render_template
 
 import RPi.GPIO as GPIO
@@ -16,9 +17,12 @@ import dht11
 import time
 
 # Initialize RPi GPIO
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-GPIO.cleanup()
+
+GPIO_PIN_LED = int(18)
+GPIO.setup(18, GPIO.OUT)
 
 # Map GPIO Pin 14 to DHT11 Sensor
 instance = dht11.DHT11(pin=14)
@@ -40,6 +44,13 @@ def page_information():
 @app.route('/dashboard')
 def page_dashboard():
 
+    ledStatus = request.args.get('led')
+
+    if ledStatus == "on":
+        GPIO.output(GPIO_PIN_LED, GPIO.HIGH)
+    else:
+        GPIO.output(GPIO_PIN_LED, GPIO.LOW)
+    
     temperature = "Error!"
     humidity    = "Error!"
 
@@ -51,7 +62,7 @@ def page_dashboard():
     temperature = result.temperature
     humidity = result.humidity
 
-    return render_template('dashboard.html', temperature = temperature,  humidity = humidity)
+    return render_template('dashboard.html', temperature = temperature,  humidity = humidity, ledStatus = ledStatus)
 
 if __name__ == '__main__':
     app.run()
